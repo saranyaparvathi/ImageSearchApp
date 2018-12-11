@@ -22,4 +22,8 @@ public class MainViewModel {
     public void setTextField() {
 
     }
+
+    public PhotoAdapter getAdapter() {
+        return new PhotoAdapter(this);
+    }
 }
