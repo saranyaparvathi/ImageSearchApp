@@ -8,8 +8,18 @@ public class PhotoItemViewModel extends BaseObservable {
     @DrawableRes
     private int productImage;
 
-    public PhotoItemViewModel(int productImage) {
-        this.productImage = productImage;
+    private String imageUrl;
+
+    public PhotoItemViewModel(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public int getProductImage() {

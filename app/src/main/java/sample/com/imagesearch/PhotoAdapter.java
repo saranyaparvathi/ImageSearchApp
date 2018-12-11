@@ -16,8 +16,8 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoViewHolder> {
     private List<PhotoItemViewModel> photoItemViewModelList;
 
     public PhotoAdapter(MainViewModel mainViewModel) {
-            this.mainViewModel = mainViewModel;
-            photoItemViewModelList = new ArrayList<>();
+        this.mainViewModel = mainViewModel;
+        photoItemViewModelList = new ArrayList<>();
     }
 
     @Override

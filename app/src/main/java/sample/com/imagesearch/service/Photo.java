@@ -46,8 +46,45 @@ public class Photo implements Parcelable {
     public String toString(){return title;}
     public String getUrl(){return url_s;}
     public String getTitle(){return title;}
+
     public String getBigUrl(){
         return url_s.substring(0,((url_s.length()-1)-5))+"_c.jpg";
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public String getSecret() {
+        return secret;
+    }
+
+    public String getServer() {
+        return server;
+    }
+
+    public int getFarm() {
+        return farm;
+    }
+
+    public int getIspublic() {
+        return ispublic;
+    }
+
+    public int getIsfriend() {
+        return isfriend;
+    }
+
+    public int getIsfamily() {
+        return isfamily;
+    }
+
+    public String getUrl_s() {
+        return url_s;
     }
 
     /**

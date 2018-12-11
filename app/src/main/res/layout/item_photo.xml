@@ -45,11 +45,12 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginTop="50dp"
-                    app:imageResource="@{itemViewModel.productImage}"
                     app:layout_constraintBottom_toTopOf="@+id/grid_guideline_item"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/grid_guideline_top"/>
+                    app:layout_constraintTop_toBottomOf="@+id/grid_guideline_top"
+                    app:loadImageUrl="@{itemViewModel.getImageUrl()}"
+                    app:provider="@{viewModel.glideProvider}"/>
 
                 <android.support.constraint.Guideline
                     android:id="@+id/grid_guideline_item"
