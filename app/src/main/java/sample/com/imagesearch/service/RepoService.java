@@ -9,9 +9,8 @@ public interface RepoService {
     @GET("/services/rest/")
     Maybe<Photos> getSearch(@Query("method") String method,
                             @Query("api_key") String API_KEY,
-                            @Query("extras") String EXTRA_SMALL_URL,
                             @Query("format") String format,
                             @Query("nojsoncallback") String set,
-                            @Query("safe_search") int safeSearch,
+                            @Query("safe_search") String safeSearch,
                             @Query("text") String searchText);
 }

@@ -6,13 +6,16 @@ import android.databinding.ObservableField;
 
 import javax.inject.Inject;
 
+import sample.com.imagesearch.service.PhotoProvider;
+
 public class MainViewModel {
 
     public ObservableField<String> textField = new ObservableField<>();
 
     @Inject
-    public MainViewModel() {
+    public MainViewModel(PhotoProvider photoProvider) {
         textField.set("HI!!!!!!");
+        photoProvider.getPhotos("kittens").subscribe(result -> System.out.println(result));
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
