@@ -3,6 +3,7 @@ package sample.com.imagesearch.service;
 import javax.inject.Inject;
 
 import io.reactivex.Maybe;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 public class PhotoProvider {
@@ -14,10 +15,10 @@ public class PhotoProvider {
         this.repoService = repoService;
     }
 
-    public Maybe<Photos> getPhotos(String searchText) {
+    public Maybe<PhotosList> getPhotos(String searchText) {
         return repoService
                 .getSearch("flickr.photos.search", "3e7cc266ae2b0e0d78e279ce8e361736", "json", "1", "1", searchText)
-                .subscribeOn(Schedulers.io())
-                .observeOn(Schedulers.computation());
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io());
     }
 }

@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         recyclerView = binding.recyclerView;
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+        getLifecycle().addObserver(mainViewModel);
         binding.setViewModel(mainViewModel);
     }
 }

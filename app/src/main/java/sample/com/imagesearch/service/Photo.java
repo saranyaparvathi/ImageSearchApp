@@ -3,7 +3,7 @@ package sample.com.imagesearch.service;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -11,17 +11,26 @@ import org.json.JSONObject;
 public class Photo implements Parcelable {
 
     //GSON fields
-    @Expose
+    @SerializedName("id")
     private String id;
-    @Expose private String owner;
-    @Expose private String secret;
-    @Expose private String server;
-    @Expose private int farm;
-    @Expose private String title;
-    @Expose private int ispublic;
-    @Expose private int isfriend;
-    @Expose private int isfamily;
-    @Expose private String url_s;
+    @SerializedName("owner")
+    private String owner;
+    @SerializedName("secret")
+    private String secret;
+    @SerializedName("server")
+    private String server;
+    @SerializedName("farm")
+    private int farm;
+    @SerializedName("title")
+    private String title;
+    @SerializedName("ispublic")
+    private int ispublic;
+    @SerializedName("isfriend")
+    private int isfriend;
+    @SerializedName("isfamily")
+    private int isfamily;
+    @SerializedName("url")
+    private String url_s;
 
     private Photo(String id, String owner, String secret, String server, int farm, String title, int ispublic, int isfriend, int isfamily, String url_s){
         this.id = id;

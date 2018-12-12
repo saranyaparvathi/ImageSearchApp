@@ -1,13 +1,12 @@
 package sample.com.imagesearch;
 
+import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import sample.com.imagesearch.databinding.ItemPhotoBinding;
 
 public class PhotoAdapter extends RecyclerView.Adapter<PhotoViewHolder> {
 
@@ -23,8 +22,8 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoViewHolder> {
     @Override
     public PhotoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        ItemPhotoBinding itemCartBinding = ItemPhotoBinding.inflate(layoutInflater, parent, false);
-        return new PhotoViewHolder(itemCartBinding);
+        //ItemPhotoBinding itemCartBinding =
+        return new PhotoViewHolder(DataBindingUtil.inflate(layoutInflater, R.layout.item_photo, parent, false));
     }
 
     @Override

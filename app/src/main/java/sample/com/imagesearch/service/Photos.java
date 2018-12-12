@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
@@ -19,11 +19,15 @@ public class Photos implements Parcelable {
         this.photo = photo;
     }
 
-    @Expose private int page;
-    @Expose private int pages;
-    @Expose private int perpage;
-    @Expose private String total;
-    @Expose
+    @SerializedName("page")
+    private int page;
+    @SerializedName("pages")
+    private int pages;
+    @SerializedName("perpage")
+    private int perpage;
+    @SerializedName("total")
+    private String total;
+    @SerializedName("photo")
     private ArrayList<Photo> photo = new ArrayList<Photo>();
 
     //helpers
